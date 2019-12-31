@@ -1,0 +1,3 @@
+[submodule "pico_edit"]
+	path = pico_edit
+	url = https://github.com/blocknotes/pico_edit.git
