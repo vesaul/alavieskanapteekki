@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<h2 id="parsedown">Parsedown</h2>
+
+<p><a href="https://travis-ci.org/erusev/parsedown"><img src="https://img.shields.io/travis/erusev/parsedown/master.svg?style=flat-square" alt="Build Status" /></a>
+<!--[![Total Downloads](http://img.shields.io/packagist/dt/erusev/parsedown.svg?style=flat-square)](https://packagist.org/packages/erusev/parsedown)--></p>
+
+<p>Better Markdown Parser in PHP</p>
+
+<p><a href="http://parsedown.org/demo">Demo</a> |
+<a href="http://parsedown.org/speed">Benchmarks</a> |
+<a href="http://parsedown.org/tests/">Tests</a> |
+<a href="https://github.com/erusev/parsedown/wiki/">Documentation</a></p>
+
+<h3 id="features">Features</h3>
+
+<ul>
+<li>Super Fast</li>
+<li><a href="https://help.github.com/articles/github-flavored-markdown">GitHub flavored</a></li>
+<li>Extensible</li>
+<li>Tested in 5.3 to 5.6</li>
+<li><a href="https://github.com/erusev/parsedown-extra">Markdown Extra extension</a></li>
+</ul>
+
+<h3 id="installation">Installation</h3>
+
+<p>Include <code>Parsedown.php</code> or install <a href="https://packagist.org/packages/erusev/parsedown">the composer package</a>.</p>
+
+<h3 id="example">Example</h3>
+
+<pre><code class="php">$Parsedown = new Parsedown();
+
+echo $Parsedown-&gt;text('Hello _Parsedown_!'); # prints: &lt;p&gt;Hello &lt;em&gt;Parsedown&lt;/em&gt;!&lt;/p&gt;
+</code></pre>
+
+<p>More examples in <a href="https://github.com/erusev/parsedown/wiki/">the wiki</a> and in <a href="http://youtu.be/wYZBY8DEikI">this video tutorial</a>.</p>
+
+<h3 id="questions">Questions</h3>
+
+<p><strong>How does Parsedown work?</strong></p>
+
+<p>It tries to read Markdown like a human. First, it looks at the lines. It’s interested in how the lines start. This helps it recognise blocks. It knows, for example, that if a line start with a <code>-</code> then it perhaps belong to a list. Once it recognises the blocks, it continues to the content. As it reads, it watches out for special characters. This helps it recognise inline elements (or inlines).</p>
+
+<p>We call this approach &#8220;line based&#8221;. We believe that Parsedown is the first Markdown parser to use it. Since the release of Parsedown, other developers have used the same approach to develop other Markdown parsers in PHP and in other languages.</p>
+
+<p><strong>Is it compliant with CommonMark?</strong></p>
+
+<p>It passes most of the CommonMark tests. Most of the tests that don&#8217;t pass deal with cases that are quite uncommon. Still, as CommonMark matures, compliance should improve.</p>
+
+<p><strong>Who uses it?</strong></p>
+
+<p><a href="http://www.phpdoc.org/">phpDocumentor</a>, <a href="http://octobercms.com/">October CMS</a>, <a href="http://bolt.cm/">Bolt CMS</a>, <a href="http://getkirby.com/">Kirby CMS</a>, <a href="http://getgrav.org/">Grav CMS</a>, <a href="http://www.statamic.com/">Statamic CMS</a>, <a href="http://www.raspberrypi.org/">RaspberryPi.org</a> and <a href="https://www.versioneye.com/php/erusev:parsedown/references">more</a>.</p>
+
+<p><strong>How can I help?</strong></p>
+
+<p>Use it, star it, share it and if you feel generous, <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=528P3NZQMP8N2">donate</a>.</p>
+
+<hr />
+
+<p>You might also like <a href="http://caret.io">Caret</a> - our Markdown editor for the desktop.</p>
+
+</body>
+</html>

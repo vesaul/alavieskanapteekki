@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+
+    <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+    {% if meta.description %}
+        <meta name="description" content="{{ meta.description|striptags }}">
+    {% endif %}{% if meta.robots %}
+        <meta name="robots" content="{{ meta.robots }}">
+    {% endif %}
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />
+    <link rel="stylesheet" href="{{ theme_url }}/style.css" type="text/css" />
+    <link rel="stylesheet" href="{{ theme_url }}/fontello.css" type="text/css" />
+
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="{{ theme_url }}/scripts/modernizr-2.6.1.min.js"></script>
+</head>
+<body>
+    <div class="parent-wrapper">
+      <div class="header-container">
+        <div class="header-container">
+          <header class="wrapper clearfix">
+              <img src="/img/apteekkitunnus2_0.png" height="180px" alt="Alavieskan apteekki">
+              <h1 class="title"><!--<a href="{{ "index"|link }}" id="logo">-->{{ site_title }}<!--</a>--></h1>
+              <h2 class="title2"> {{ meta.subtitle }}</h2>
+              <nav>
+                  <ul>
+                      {% for page in pages if page.title %}
+                          <li{% if page.id == current_page.id %} class="active"{% endif %}>
+                              <a href="{{ page.url }}">{{ page.title }}</a>
+                          </li>
+                      {% endfor %}
+                  </ul>
+              </nav>
+
+          </div>
+    </header>
+    </div>
+  <div class="header-aa"></div>
+  
+  <div class="main-container">
+    <section id="content">
+        <div class="main wrapper clearfix">
+          {% for item in rss_content %}
+            <h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
+            <time>{{ item.date }}</time>
+            <p>{{ item.description }}</p>
+          {% endfor %}
+        </div>
+    </section>
+  </div>
+   <div class="footer-container">
+      <footer class="wrapper">
+            <div class="social">
+                {% for social in meta.social %}
+                    <a href="{{ social.url }}" title="{{ social.title }}"><span class="icon-{{ social.icon }}"></span></a>
+                {% endfor %}
+            </div>
+            <a href="http://picocms.org/">Pico</a> was made by <a href="http://gilbert.pellegrom.me">Gilbert Pellegrom</a>
+            and is maintained by <a href="https://github.com/picocms/Pico/graphs/contributors">The Pico Community</a>.
+            Released under the <a href="https://github.com/picocms/Pico/blob/master/LICENSE.md">MIT license</a>.
+      </footer>
+    </div>
+</div>
+</body>
+</html>
